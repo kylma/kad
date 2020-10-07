@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	clipper "github.com/swill/go.clipper"
-	"github.com/swill/kad"
+	"github.com/kylma/kad"
 )
 
 func TestUsageWithJSON(t *testing.T) {

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/swill/kad"
+	"github.com/kylma/kad"
 )
 
 func TestSwitchTypes(t *testing.T) {
