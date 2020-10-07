@@ -452,7 +452,8 @@ func (k *KAD) DrawOutputFiles() error {
 		// create other file formats
 		if in_strings("dxf", k.Result.Formats) || in_strings("eps", k.Result.Formats) {
 			abs_eps := fmt.Sprintf("%s.%s", strings.TrimSuffix(abs_svg, ".svg"), "eps")
-			err = exec.Command("inkscape", "-E", abs_eps, abs_svg).Run()
+			cmd := exec.Command("inkscape", "--export-filename", abs_eps, abs_svg)
+			err := cmd.Run()
 			if err != nil {
 				log.Printf("ERROR: could not create EPS file for: %s, %s | %s", k.Hash, layer, err.Error())
 				continue // skip dxf because it depends on eps
